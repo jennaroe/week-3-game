@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Hedwig's Hangman</title>
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="javascript" type="text/javascript" href="assets/javascript/game.js">
+    
+	<script>window.onload = function() {
+              guessLetter();
+              newGame();
+              };
+              </script>
+  </head>
+  <body>
+  <header>
+    <h1>Hedwig's Hangman</h1>
+    <h3>A Wizarding Word Game</h3>
+  </header>
+    <div id="container">
+      <div id="guessesremaining"></div>
+      <div id="lettersguessed"></div>
+
+      <div id="maskedWord"></div>
+
+       <div id="wins"</div>      
+    
+    <div id="newgamearea">
+    	<button onclick="newGame()">New Game</button>
+    </div>
+    		 <canvas id="stickman">This Text will show if the Browser does NOT support HTML5 Canvas tag</canvas>
+  
+
+    </div>
+    <script src="assets/javascript/game.js" type="text/javascript"></script>
+  </body>
+</html>
