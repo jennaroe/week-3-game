@@ -1,6 +1,6 @@
 // constants
 var words = {
-  choices:["animagus","apparate","legilimens","mudblood","muggle","occlumency","parselmouth","squib","witch","wizard","gryffindor","hufflepuff","ravenclaw","slytherin","snape","dumbledore","malfoy","hermione","weasley","quidditch","hogwarts","beauxbatons","durmstrang","horcrux","howler","portkey","snitch"],
+  choices:["animagus","apparate","legilimens","mudblood","muggle","occlumency","parselmouth","squib","witch","wizard","gryffindor","hufflepuff","ravenclaw","slytherin","snape","dumbledore","malfoy","hermione","weasley","quidditch","hogwarts","beauxbatons","durmstrang","horcrux","howler","portkey","snitch","galleon"],
   }
 var remainingGuesses = 10;           
 var wins = "";
@@ -22,30 +22,28 @@ function newGame() {
   updatePage();   
 }
 
-// Guesses a letter when the user presses a key.
 function guessLetter() {
   document.onkeyup = function(event) {
     var letter = String.fromCharCode(event.keyCode).toLowerCase();
   var maskedWord = document.getElementById("maskedWord");
   if (guessCount == 0 || maskedWord.innerHTML.indexOf("_") < 0 ||
       lettersGuessed.indexOf(letter) >= 0) {
-    return;   // game is over, or already guessed this letter
+    return;   
   }
   lettersGuessed += letter;
   if (chosenWord.indexOf(letter) < 0) {
-    guessCount--;      // an incorrect guess
+    guessCount--;      
   }
   updatePage();
 }
 }
-// Updates the hangman image, word clue, etc. to the current game state.
+
 function updatePage() {
 
-  // update clue string such as "h _ l l _ "
   var wordClue = "";
   for (var i = 0; i < chosenWord.length; i++) {
     var letter = chosenWord.charAt(i);
-    if (lettersGuessed.indexOf(letter) >= 0) {   // letter has been guessed
+    if (lettersGuessed.indexOf(letter) >= 0) {  
       wordClue += letter + " ";
     } else {                              // not guessed
       wordClue += "_ ";
